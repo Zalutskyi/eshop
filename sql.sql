@@ -21,4 +21,14 @@ EXEC sp_addsrvrolemember
     @loginame = N'PublicApi', 
     @rolename = N'sysadmin';
 GO
+CREATE LOGIN WebU
+WITH PASSWORD = N'1Ma',
+CHECK_POLICY = ON,
+CHECK_EXPIRATION = OFF;
+GO
+EXEC sp_addsrvrolemember
+@loginame=N'WebU',
+@rolename=N'sysadmin';
+GO
 exit
+
